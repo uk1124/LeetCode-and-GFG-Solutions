@@ -1,2 +1,1 @@
-# LeetCode_Solutions
-Collection of LeetCode questions! 
+Collection of my solutions of LeetCode problems. 
