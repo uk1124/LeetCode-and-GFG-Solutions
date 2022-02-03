@@ -15,7 +15,7 @@ public:
         if(root == NULL) {
             return 0;
         }
-        else if(root->left == NULL and root->right == NULL) {
+        else if(root->left == NULL and root->right == NULL) {   // If leaf node
             return 1;
         }
         else if(root->left == NULL) {           // If left subtree is NULL
