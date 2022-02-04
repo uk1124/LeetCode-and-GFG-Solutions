@@ -11,10 +11,10 @@ public:
                 while (lo < hi) {
                     if (nums[lo] + nums[hi] == sum) {
                         ans.push_back({nums[i], nums[lo], nums[hi]});
-                        while (lo < hi and nums[lo] == nums[lo+1]) {
+                        while (lo < hi and nums[lo] == nums[lo+1]) { // To avoid duplicates
                             lo++;
                         }
-                        while (lo < hi and nums[hi] == nums[hi-1]) {
+                        while (lo < hi and nums[hi] == nums[hi-1]) { // To avoid duplicates
                             hi--;
                         }
                         lo++; 
