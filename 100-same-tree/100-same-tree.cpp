@@ -18,7 +18,10 @@ public:
         if(p == NULL or q == NULL) {
             return false;
         }
-        // If both trees are not NULL, check for left and right subtrees
-return (p->val == q->val and isSameTree(p->left, q->left) and isSameTree(p->right,q->right));
+        
+        if(p->val == q->val) { // If both trees are not NULL, check for left and right subtrees
+            return isSameTree(p->left, q->left) and isSameTree(p->right,q->right);
+        }
+        return false;
     }
 };
