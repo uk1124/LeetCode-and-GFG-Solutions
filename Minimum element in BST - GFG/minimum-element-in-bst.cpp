@@ -97,10 +97,8 @@ int minValue(Node* root) {
     if(!root) {
         return -1;
     }
-    if(!root->left) {
+    if(!root->left) {       // In BST, min value exist in the left subtree
         return root->data;
     }
-    else {
-        minValue(root->left);
-    }
+    minValue(root->left);
 }
