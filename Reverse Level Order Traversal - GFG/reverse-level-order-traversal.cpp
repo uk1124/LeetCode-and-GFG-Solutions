@@ -122,6 +122,7 @@ vector<int> reverseLevelOrder(Node *root)
     q.push(root);
     while(!q.empty()) {
         Node* node = q.front();
+        q.pop();
         ans.push_back(node->data);
         if(node->right != NULL) {
             q.push(node->right);
@@ -129,7 +130,6 @@ vector<int> reverseLevelOrder(Node *root)
         if(node->left != NULL) {
             q.push(node->left);
         }
-        q.pop();
     }
     reverse(ans.begin(), ans.end());
     return ans;
