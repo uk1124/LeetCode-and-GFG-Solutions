@@ -24,7 +24,8 @@ public:
         }
         if(left->val != right->val) {
             return false;
-        }
+        } 
+        // Apart from the orientation, the values of the nodes should also be equal
         return Symmetric(left->left, right->right) and Symmetric(left->right, right->left);
     }
 };
