@@ -19,7 +19,9 @@ public:
          if(!root->left and !root->right and root->val == targetSum) {
             return true;
         }
-        // Subtract value of root from root's value to check if had become equal to targetSum
-        return hasPathSum(root->left, targetSum - root->val) or hasPathSum(root->right,                                                                             targetSum - root->val);
+        bool left = hasPathSum(root->left, targetSum - root->val);
+        bool right = hasPathSum(root->right, targetSum - root->val);
+        
+        return left or right;
     }
 };
