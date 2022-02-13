@@ -18,7 +18,7 @@ public:
         }
         queue<TreeNode*> q;
         q.push(root);
-        bool rightToLeft = true;
+        bool leftToRight = true;    // It will help to decide the order of zig-zag traversal
         
         while(!q.empty()) {
             int size = q.size();
@@ -28,7 +28,7 @@ public:
                 TreeNode* temp = q.front();
                 q.pop();
                 int index;
-                if(rightToLeft) {
+                if(leftToRight) {
                     index = i;
                 }
                 else {
@@ -42,7 +42,7 @@ public:
                     q.push(temp->right);
                 }
             }
-            rightToLeft = !rightToLeft;
+            leftToRight = !leftToRight;
             ans.push_back(v);
         }
         return ans;
