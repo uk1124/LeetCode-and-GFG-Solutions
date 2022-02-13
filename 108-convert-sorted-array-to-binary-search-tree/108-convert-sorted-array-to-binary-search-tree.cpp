@@ -16,11 +16,10 @@ public:
         if(n == 0) {
             return NULL;
         }
-        TreeNode* root = makeBST(nums, 0, n-1);
-        return root;
+        return makeBST(nums, 0, n-1);
     }
     
-    TreeNode* makeBST(vector<int> &v, int lo, int hi) {
+    TreeNode* makeBST(vector<int> &v, int lo, int hi) { // Use Binary Search to make nodes
         if(lo > hi) {
             return NULL;
         }
