@@ -1,6 +1,8 @@
 class MyCircularQueue {
+private: 
     vector<int> queue;
     int fr, qSize, k;
+    
 public:
     MyCircularQueue(int _k) : queue(vector<int>(_k)), fr(0), qSize(0), k(_k)  {    
     }
