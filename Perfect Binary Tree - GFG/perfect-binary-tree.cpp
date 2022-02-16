@@ -129,6 +129,7 @@ public:
         }
         int lh = height(root->left);
         int rh = height(root->right);
+        
         if(lh == -1 or rh == -1 or lh != rh) {
             return -1;
         }
