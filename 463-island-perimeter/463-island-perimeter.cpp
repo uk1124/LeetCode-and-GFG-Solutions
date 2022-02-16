@@ -6,10 +6,10 @@ public:
             for(int j=0; j<grid[i].size(); j++) {
                 if(grid[i][j] == 1) {
                     perimeter += 4;
-                    if(i < grid.size()-1 and grid[i+1][j] == 1) {
+                    if(i<grid.size()-1 and grid[i+1][j] == 1) {   // There is a island in down
                     perimeter -= 2;
                     }
-                    if(j < grid[i].size()-1 and grid[i][j+1] == 1) {
+                    if(j<grid[i].size()-1 and grid[i][j+1] == 1) { //There is a island in right
                         perimeter -= 2;
                     }
                 }
