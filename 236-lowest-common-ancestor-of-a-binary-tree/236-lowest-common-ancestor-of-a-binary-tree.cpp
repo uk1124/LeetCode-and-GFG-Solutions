@@ -13,19 +13,19 @@ public:
         if(!root) {
             return NULL;
         }
-        if(root == p or root == q) {
-            return root;
+        if(root == p or root == q) {                             
+            return root;   
         }
         TreeNode* left =  lowestCommonAncestor(root->left, p, q);
         TreeNode* right = lowestCommonAncestor(root->right, p, q);
         
-        if(right and left) {
+        if(right and left) {                // Means p,q exist below different Subtrees
             return root;
         }
-        else {
-            if(!left) {
-                return right;
-            }
+        else {                              // Means p,q exist below the same Subtree
+            if(!left) {                    
+            return right;
+        }
             else {
                 return left;
             }
