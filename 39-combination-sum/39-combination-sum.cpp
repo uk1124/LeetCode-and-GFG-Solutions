@@ -18,8 +18,8 @@ public:
     }
     
     vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
-        sort(candidates.begin(),candidates.end());
-                                                            // Removing duplicates
+        
+        sort(candidates.begin(),candidates.end());      // Sorting and Removing duplicates
         candidates.erase(unique(candidates.begin(),candidates.end()),candidates.end()); 
         
         vector<int> r;
