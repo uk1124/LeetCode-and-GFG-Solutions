@@ -4,17 +4,18 @@ public:
         if(k == num.size()) {
             return "0";
         }
-        
         stack<char> st;
+        
         for(int i = 0; i < num.size(); i++) {
-            while(k > 0 and !st.empty() and st.top() > num[i]) {
+      // While there's a digit which is less than the previous digit, discard the previous one
+            while(k > 0 and !st.empty() and st.top() > num[i]) { 
                 st.pop();
                 k--;
             }
             st.push(num[i]);
         }
         
-        while(k > 0){
+        while(k > 0){       // For cases like "2222"
             st.pop();
             k--;            
         }
