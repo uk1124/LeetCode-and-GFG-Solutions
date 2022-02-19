@@ -11,6 +11,7 @@ public:
             st.pop();                   // Pop lower price from the stack
         }
         st.push({price, span});         // Push every pair of <price, span> to the stack
+        
         return span;
     }
 };
