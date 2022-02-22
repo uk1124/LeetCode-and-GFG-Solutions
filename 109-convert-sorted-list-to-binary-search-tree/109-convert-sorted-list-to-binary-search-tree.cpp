@@ -27,7 +27,7 @@ public:
 		return NULL;
 	}
 	
-	int mid = (end + start) / 2;
+	int mid = (start + end) / 2;
 	TreeNode* left = toBST(start, mid - 1);
 	
 	TreeNode* root = new TreeNode(node->val);
