@@ -30,16 +30,18 @@ public:
             root->right = deleteNode(root->right, key);
         }
         else {
-            if(!root->left){        // node only has right subtree, return the right subtree
+            if(!root->left){        // Node only has right subtree, return the right subtree
                 return root->right;
             }
-            else if(!root->right){  // node only has left subtree, return the left subtree
+            else if(!root->right){  // Node only has left subtree, return the left subtree
                 return root->left;
             }
-                                    // node has both left and right subtree
-                temp = findMin(root->right);
-                root->val = temp->val;
-                root->right = deleteNode(root->right, root->val);
+                                    // Node has both left and right subtree
+                temp = findMin(root->right); // Find the minimum value in the right subtree
+                root->val = temp->val;       // Set that value to the currently found node
+                                                             
+        root->right = deleteNode(root->right, root->val); // Recursively delete the minimum
+                                                          // value in the right subtree
         }
         return root;
     }
