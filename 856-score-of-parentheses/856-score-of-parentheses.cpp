@@ -8,8 +8,8 @@ public:
                 stack.push(curr);
                 curr = 0;
             }
-            else {                                  // If there is a '('
-                curr = stack.top() + max(curr*2, 1);
+            else {                                      // If there is a ')'
+                curr = stack.top() + max(curr*2, 1);    // The curr score will be doubled at least 1
                 stack.pop();
             }
         }
