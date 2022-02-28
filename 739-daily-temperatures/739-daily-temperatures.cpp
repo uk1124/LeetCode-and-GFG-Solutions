@@ -7,13 +7,13 @@ public:
         
         for(int i=0; i<n; i++) {
             while(!st.empty() and temperatures[i] > temperatures[st.top()]) {
-                ans[st.top()] = abs(i - st.top());
+                ans[st.top()] = i - st.top();
                 st.pop();
             }
-            st.push(i);
+            st.push(i);             // Pushing the index of the elements
         }
         
-        while(!st.empty()) {
+        while(!st.empty()) {        // All the remaining elements in the stack would not have any future day, so assign them to 0.
             ans[st.top()] = 0;
             st.pop();
         }
