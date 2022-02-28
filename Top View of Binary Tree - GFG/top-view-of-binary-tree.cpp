@@ -115,7 +115,7 @@ class Solution
         }
         q.push({root,0});
         
-        while(q.size()) {
+        while(!q.empty()) {
             auto curr = q.front();
             q.pop();
             Node* node = curr.first;
