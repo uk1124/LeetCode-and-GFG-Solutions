@@ -10,6 +10,7 @@
  * };
  */
 class Solution {
+    // APPROACH: Inorder traversal of BST produces sorted list, so while traversing, keep teack of the no. of elements visited
 public:
     int count = 0;
     int kthSmallest(TreeNode* root, int k) {
