@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int dp[2510];
+    int dp[2510];                      // dp[i] is the longest increase subsequence which ends at nums[i]
     int lengthOfLIS(vector<int>& nums) {
         memset(dp, -1, sizeof(dp));
         int n = nums.size();
