@@ -23,7 +23,6 @@ public:
         if (root->val != subRoot->val) {
             return false;
         }
-        
         return isIdentical(root->left, subRoot->left) and isIdentical(root->right, subRoot->right);
     }
     
