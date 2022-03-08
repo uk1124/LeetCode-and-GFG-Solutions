@@ -107,7 +107,7 @@ class Solution {
     // Function to return the diameter of a Binary Tree.
     int diameter(Node* root) {
         int height = 0;
-        Diameter(root,height);
+        Diameter(root, height);
         return height;  
     }
 };
