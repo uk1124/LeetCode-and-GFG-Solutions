@@ -13,7 +13,7 @@ class Solution {
                     return true;
                 }
             }
-            else if(parent != it) {
+            else if(parent != it) { // If the adjacent node is not parent & already visited, return true.
                 return true;
             }
         }
