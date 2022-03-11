@@ -10,12 +10,12 @@
  * };
  */
 class Solution {
-private: 
+public:
     TreeNode* first;
     TreeNode* prev;
     TreeNode* middle;
     TreeNode* last; 
-private: 
+
     void inorder(TreeNode* root) {
         if(!root) {
             return; 
@@ -42,7 +42,7 @@ private:
         
         inorder(root->right);                                // Right call
     }
-public:
+
     void recoverTree(TreeNode* root) {
         first = middle = last = NULL; 
         prev = new TreeNode(INT_MIN); 
