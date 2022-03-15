@@ -1,0 +1,29 @@
+class Solution {
+public:
+    /* APPROACH: 
+    i) Find the largest index k such that nums[k] < nums[k + 1]. If no such index exists, just reverse  nums and done.
+ii) Find the largest index l > k such that nums[k] < nums[l].
+iii) Swap nums[k] and nums[l].
+iv) Reverse the sub-array nums[k + 1:].
+    */
+    void nextPermutation(vector<int>& nums) {
+        int n = nums.size(), k, l;
+    	for (k = n - 2; k >= 0; k--) {
+            if (nums[k] < nums[k + 1]) {
+                break;
+            }
+        }
+    	if (k < 0) {
+    	    reverse(nums.begin(), nums.end());
+            return;
+    	}
+        
+        for (l = n - 1; l > k; l--) {
+            if (nums[l] > nums[k]) {
+                break;
+            }
+        } 
+        swap(nums[k], nums[l]);
+        reverse(nums.begin() + k + 1, nums.end());
+    }
+};
