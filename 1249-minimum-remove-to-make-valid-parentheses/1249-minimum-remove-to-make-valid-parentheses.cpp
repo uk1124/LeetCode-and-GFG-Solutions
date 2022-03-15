@@ -1,5 +1,6 @@
 class Solution {
 public:
+    // APPROACH: use a stack for checking the validity of parentheses, and later remove the indexes of invalid parentheses from the string
     string minRemoveToMakeValid(string s) {
         stack <int> st;
         string ans = "";
