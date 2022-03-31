@@ -1,6 +1,6 @@
 class Solution {
 public:
-    
+    // APPROACH: Ussing DFS. Recursively keep visiting the nodes and checking if this is the end.
     bool dfs(vector<vector<int>> &adj, vector<int> &visited, int source, int destination) {
         if(source == destination) {
             return true;
