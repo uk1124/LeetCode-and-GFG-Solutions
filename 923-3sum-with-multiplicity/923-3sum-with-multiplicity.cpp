@@ -14,13 +14,13 @@ public:
                     continue;
                 }
                 if(i == j and j == k) {
-                   ans += mp[i] * (mp[i] - 1) * (mp[i] - 2) / 6; 
+                   ans += mp[i] * (mp[i] - 1) * (mp[i] - 2) / 6;    // nC3 which is n * (n-1) * (n-2)/6n (Ck = n!/(n-k)!*k!)
                 }
                 else if(i == j and j != k) {
-                    ans += mp[i] * (mp[i] - 1) / 2 * mp[k];
+                    ans += mp[i] * (mp[i] - 1) / 2 * mp[k];         // nC2
                 }
                 else if(i < j and j < k) {
-                    ans += mp[i] * mp[j] * mp[k];
+                    ans += mp[i] * mp[j] * mp[k];                   // nC1
                 }
             }
         }
