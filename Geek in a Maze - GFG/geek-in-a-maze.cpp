@@ -21,35 +21,36 @@ class Solution{
 	    
 	    q.push({{r,c}, {0, 0}});
 	    visited[r][c] = true;
-	    int cnt = 1;
+	    int count = 1;
 	    while(!q.empty()) {
 	        int x = q.front().first.first;
 	        int y = q.front().first.second;
 	        int up = q.front().second.first;
 	        int down = q.front().second.second;
 	        q.pop();
-	        if(y - 1 >= 0 && mat[x][y - 1] == '.' && visited[x][y - 1] == false){
+	        
+	        if(y - 1 >= 0 and mat[x][y - 1] == '.' and visited[x][y - 1] == false) {
 	            q.push({{x, y - 1}, {up, down}});
 	            visited[x][y - 1] = true;
-	            cnt++;
+	            count++;
 	        }
-	        if(y + 1 < m && mat[x][y + 1] == '.' && visited[x][y + 1] == false){
+	        if(y + 1 < m and mat[x][y + 1] == '.' and visited[x][y + 1] == false) {
 	            q.push({{x, y + 1}, {up, down}});
 	            visited[x][y + 1] = true;
-	            cnt++;
+	            count++;
 	        }
-	        if(x - 1 >= 0 && mat[x - 1][y] == '.' && visited[x - 1][y] == false && up != u){
+	        if(x - 1 >= 0 and mat[x - 1][y] == '.' and visited[x - 1][y] == false and up != u) {
 	            q.push({{x - 1, y}, {up + 1, down}});
 	            visited[x - 1][y] = true;
-	            cnt++;
+	            count++;
 	        }
-	        if(x + 1 < n && mat[x  + 1][y] == '.' && visited[x + 1][y] == false && down != d){
+	        if(x + 1 < n and mat[x  + 1][y] == '.' and visited[x + 1][y] == false and down != d) {
 	            q.push({{x + 1, y}, {up, down + 1}});
 	            visited[x + 1][y] = true;
-	            cnt++;
+	            count++;
 	        }
 	    }
-	    return cnt;
+	    return count;
 	}
 };
 
