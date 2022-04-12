@@ -9,7 +9,7 @@ public:
                     if(i<grid.size()-1 and grid[i+1][j] == 1) {   // There is a island in down
                     perimeter -= 2;
                     }
-                    if(j<grid[i].size()-1 and grid[i][j+1] == 1) { //There is a island in right
+                    if(j<grid[i].size()-1 and grid[i][j+1] == 1) { // There is a island in right
                         perimeter -= 2;
                     }
                 }
