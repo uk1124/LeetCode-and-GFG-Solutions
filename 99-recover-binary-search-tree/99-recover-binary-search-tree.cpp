@@ -42,7 +42,7 @@ public:
         
         inorder(root->right);                                // Right call
     }
-
+    
     void recoverTree(TreeNode* root) {
         first = middle = last = NULL; 
         prev = new TreeNode(INT_MIN); 
