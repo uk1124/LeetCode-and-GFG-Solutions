@@ -22,12 +22,12 @@ class Solution{
 	    //sort p vector in ascending order of profit per weight ratio
 	    sort(v.begin(),v.end(),greater<pair<double,long long int>>());
 	    double profit = 0;
-	    for(int i=0; i<=p.size(); i++){
+	    for(int i=0; i<=p.size(); i++) {
 	        if(v[i].second <= C){
 	            profit += v[i].first*v[i].second;
 	            C -= v[i].second;
 	        }
-	        else if(v[i].second > C){
+	        else if(v[i].second > C) {
 	            profit += C*v[i].first;
 	            break;
 	        }
