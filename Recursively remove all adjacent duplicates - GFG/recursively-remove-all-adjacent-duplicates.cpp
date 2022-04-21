@@ -7,18 +7,17 @@ using namespace std;
  // } Driver Code Ends
 //User function template for C++
 
-class Solution{
+class Solution {
 public:
-    string remove(string s){
+    string remove(string s) {
         string res = "";
         int i = 0;
         while(i < s.length()) {
             char ch = s[i];
             int freq = 0;
-            while(ch == s[i]){
+            while(ch == s[i]) {
                 freq++;
-                i++;
-                
+                i++; 
             }
             if(freq == 1) {
                 res += ch;
