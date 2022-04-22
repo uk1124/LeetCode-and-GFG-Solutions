@@ -6,14 +6,14 @@ public:
             return 0;
         }
         
-        if(nums[0] > nums[1]) {
+        if(nums[0] > nums[1]) {             // Corner case
             return 0;
         }
-        if(nums[n-1] > nums[n-2]) {
+        if(nums[n-1] > nums[n-2]) {         // Corner case
             return n-1;
         }
         
-        int lo = 1;
+        int lo = 1;                         // Search in remaining array
         int hi = n-2;
         
         while(lo <= hi) {
