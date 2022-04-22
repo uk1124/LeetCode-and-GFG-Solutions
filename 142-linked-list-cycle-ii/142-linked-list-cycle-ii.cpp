@@ -25,17 +25,6 @@ public:
                 return temp;
             }
         }
-//         while(slow != fast) {
-//              if(!fast or !fast->next) {
-//                 return NULL;
-//             }
-//             slow = slow->next;
-//             fast = fast->next->next;
-//         }
-            
-//         while(temp->next != fast) {
-//             temp = temp->next;
-//         }
         return NULL;
     }
 };
