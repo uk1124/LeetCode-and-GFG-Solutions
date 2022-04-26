@@ -16,6 +16,7 @@ public:
             for(int j=0; j<graph[i].size(); j++) {
                 if(graph[i][j]) {
                     t++;
+                }
             }
             if(t % 2) {
                 c++;
