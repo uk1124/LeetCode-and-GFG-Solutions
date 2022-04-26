@@ -10,18 +10,19 @@ using namespace std;
 class Solution{
 public:
     int eulerPath(int N, vector<vector<int>> graph){
-        int c=0;
+        int c = 0;
         for(int i=0; i<graph.size(); i++){
             int t=0;
             for(int j=0; j<graph[i].size(); j++) {
-                if(graph[i][j]) t++;
+                if(graph[i][j]) {
+                    t++;
             }
-            if(t%2) {
+            if(t % 2) {
                 c++;
             }
             
         }
-        return c==2;
+        return (c == 2);
     }
 };
 
