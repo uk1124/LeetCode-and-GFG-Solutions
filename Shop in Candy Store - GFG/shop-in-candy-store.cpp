@@ -6,8 +6,7 @@ using namespace std;
 class Solution
 {
 public:
-    vector<int> candyStore(int candies[], int N, int K)
-    {
+    vector<int> candyStore(int candies[], int N, int K) {
         int min_ans = 0, max_ans = 0;
         sort(candies,candies+N);
         
