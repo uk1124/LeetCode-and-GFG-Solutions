@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //APPROACH: DFS and flood-fill the land (change 1 to 0) from the boundary of the grid. Then, we count the remaining land.
     int dfs_check(vector<vector<int>>& grid, int i, int j, int rows, int columns) {
         if(i < 0 or j < 0 or i >= rows or j >= columns or grid[i][j] == 0) {
             return 0;
@@ -7,7 +8,7 @@ public:
         
         grid[i][j] = 0;
         
-        return (1 + dfs_check(grid,i-1,j,rows,columns) + dfs_check(grid,i+1,j,rows,columns) + dfs_check(grid,i,j-1,rows,columns) + dfs_check(grid,i,j+1,rows,columns));
+        return (1 + dfs_check(grid, i-1, j, rows, columns) + dfs_check(grid, i+1, j, rows, columns) + dfs_check(grid,i, j-1, rows, columns) + dfs_check(grid, i, j+1, rows, columns));
     }
     
     int numEnclaves(vector<vector<int>>& grid) {
