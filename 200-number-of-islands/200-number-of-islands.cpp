@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //APPROACH: DFS and mark the area as '2' wherever we found land
     void mark_island(vector<vector<char>>& grid, int i, int j, int rows, int columns) {
         if(i < 0 or j < 0 or i >= rows or j >= columns or grid[i][j] != '1') {
             return;
