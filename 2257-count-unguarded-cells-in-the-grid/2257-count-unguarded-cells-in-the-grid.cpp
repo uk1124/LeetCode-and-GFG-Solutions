@@ -1,6 +1,11 @@
 class Solution {
 public:
-    //APPROACH: DFS and mark all the unguarded cells upward, downward, right & left of a guarded cell until guarded or walled cell is found.
+    /*APPROACH: DFS and mark all the unguarded cells upward, downward, right & left of a guarded cell until guarded or walled cell is found.
+    Here,   g -> cell with a guard
+            w -> cell with a wall
+            d -> guarded cells
+            u -> unguarded cells
+    */
     void dfs_mark(vector<vector<char>> &grid, int r, int c, int m, int n) {
         for(int j=c+1; j<n; j++) {
             if (grid[r][j] == 'w' or grid[r][j] == 'g') {
