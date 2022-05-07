@@ -82,6 +82,7 @@ struct Node {
 */
 //Function to merge two sorted linked list.
 Node* sortedMerge(Node* head1, Node* head2) {
+    // Iterative method
     Node* dummy = new Node(-1);
     Node* ptr = dummy;
     
@@ -104,4 +105,24 @@ Node* sortedMerge(Node* head1, Node* head2) {
        ptr->next = head1;
    }
    return dummy->next;
+   
+   // Recursive method
+   /*
+    if(!head1){
+       return head2;
+   }
+   
+   else if(!head2){
+       return head1;
+   }
+   
+   if(head1->data < head2->data){
+       head1->next = sortedMerge(head1->next, head2);
+       return head1;
+   }
+   else {
+       head2->next = sortedMerge(head1, head2->next);
+       return head2;
+   }
+   */
 }  
