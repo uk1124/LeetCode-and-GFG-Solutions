@@ -27,10 +27,9 @@ class Solution {
         vector<vector<int>> dp(r , vector<int>(c , -1));
         
         int maxVal = INT_MIN;
-        for(int i = 0 ; i < c ; i++) {
+        for(int i = 0; i < c; i++) {
             maxVal = max(maxVal , recFunc(0 , i , m , dp));
         }
-        
         return maxVal;
     }
 };
