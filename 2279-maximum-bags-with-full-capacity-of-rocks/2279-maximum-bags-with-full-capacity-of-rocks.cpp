@@ -1,5 +1,10 @@
 class Solution {
 public:
+    /*APPROACH:
+    Calculate all empty space for each bag.
+    Sort them from small to big, including 0 empty space.
+    Greedily Fill the bags, from small empty space to bigger one.
+    */
     int maximumBags(vector<int>& capacity, vector<int>& rocks, int additionalRocks) {
         vector<int> v; 
         for(int i = 0; i < capacity.size(); i ++ ) {
