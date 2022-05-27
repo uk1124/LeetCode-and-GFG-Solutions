@@ -1,6 +1,6 @@
 class Solution {
 public:
-    /*Top-down approach (Memoization):
+    /*Top-Down Approach (Memoization):
     int fun(int n, vector<int> &dp) {
         if(n <= 2) {
             return n;
