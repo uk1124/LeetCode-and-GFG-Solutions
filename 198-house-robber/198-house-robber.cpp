@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //APPROACH: Memoization
     int f(int indx, vector<int> &nums, vector<int> &dp) {
         if(indx == 0) {
             return nums[indx];
@@ -11,8 +12,8 @@ public:
             return dp[indx];
         }
         
-        int pick = nums[indx] + f(indx - 2, nums, dp);
-        int notPick = 0 + f(indx - 1, nums, dp);
+        int pick = nums[indx] + f(indx - 2, nums, dp);  //Pick the current index, we can't pick the adjacent index
+        int notPick = 0 + f(indx - 1, nums, dp);        //Pick the next index
         
         return dp[indx] = max(pick, notPick);
     }
