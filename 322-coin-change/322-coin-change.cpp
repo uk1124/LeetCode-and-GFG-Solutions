@@ -4,19 +4,19 @@ class Solution {
     int dp[10000 + 1][12 + 1];
     
     int memoization(vector<int>& wt, int w, int n) {
-        if (n == 0 or w == 0) {
+        if(n == 0 or w == 0) {
             return (w == 0) ? 0 : INT_MAX - 1;
         }
         
-        if (dp[w][n] != -1) {
+        if(dp[w][n] != -1) {
             return dp[w][n]; 
         }
 			
-        if (wt[n - 1] > w) {
-            return dp[w][n] = 0 + memoization(wt, w - 0, n - 1);
+        if(wt[n-1] > w) {
+            return dp[w][n] = 0 + memoization(wt, w-0, n-1);
         }
         else {
-            return dp[w][n] = min(0 + memoization(wt, w - 0, n - 1), 1 + memoization(wt, w - wt[n - 1], n));
+            return dp[w][n] = min(0 + memoization(wt, w-0, n-1), 1 + memoization(wt, w-wt[n - 1], n));
         }
     }
     
