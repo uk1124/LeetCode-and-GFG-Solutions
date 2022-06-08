@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //APPROACH: Using Djikstra Algorithm
     int networkDelayTime(vector<vector<int>>& times, int n, int k) {
         vector<vector<pair<int, int>>> g(n+1);
         for (auto t : times) {
@@ -17,9 +18,9 @@ public:
             u = pq.top().second; 
             pq.pop();
 			if(vis[u]) {
-                continue;
-            }
-			//vis[u] = true;
+			continue;
+			}
+			vis[u] = true;
             for (auto to: g[u]) {
                 v = to.first, w = to.second;
                 if(dist[v] > dist[u] + w) {
