@@ -16,10 +16,10 @@ public:
         while(!pq.empty()) {
             u = pq.top().second; 
             pq.pop();
-			// if(vis[u]) {
-			// continue;
-			// }
-			vis[u] = true;
+			if(vis[u]) {
+                continue;
+            }
+			//vis[u] = true;
             for (auto to: g[u]) {
                 v = to.first, w = to.second;
                 if(dist[v] > dist[u] + w) {
