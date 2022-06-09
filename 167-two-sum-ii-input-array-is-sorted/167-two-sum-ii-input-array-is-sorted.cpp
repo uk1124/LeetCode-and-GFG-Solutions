@@ -1,6 +1,6 @@
 class Solution {
 public:
-    //APPROACH: Use Binary Search.
+    //APPROACH: Using Binary Search.
     vector<int> twoSum(vector<int>& numbers, int target) {
         int lo = 0;
         int hi = numbers.size()-1;
