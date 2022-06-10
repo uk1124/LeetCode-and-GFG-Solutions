@@ -10,21 +10,6 @@ using namespace std;
 class Solution {
   public:
     int maxCoins(int A[], int B[], int T, int N) {
-        // int ans = 0;
-        // set<pair<int,int>> s;
-        // for(int i=0; i<N; i++) {
-        //     s.insert({B[i], A[i]});
-        // }
-        
-        // while(T--) {
-        //     auto it = *(--s.end());
-        //     ans += it.first;
-        //     --it.second;
-        //     if(it.second == 0) {
-        //         s.erase(--s.end());
-        //     }
-        // }
-        // return ans;
         
         priority_queue<pair<int,int>> q;
         for(int i=0; i<N; i++) {
@@ -32,14 +17,14 @@ class Solution {
         }
         int ans = 0;
         while(T > 0 and !q.empty()) {
-            pair<int,int> t=q.top();
+            auto t = q.top();
             q.pop();
             if(t.second <= T)  {
-                ans += (t.first*t.second);
+                ans += (t.first * t.second);
                 T -= t.second;
             }
             else {
-                 ans += (t.first*T);
+                 ans += (t.first * T);
                  T = 0;
             }
         }
