@@ -19,7 +19,7 @@ public:
         ListNode *newHead, *tail;
         newHead = tail = head;
         
-        while(tail->next) {     //Get the number of nodes in the list
+        while(tail->next) {     //Get the no. of nodes in the list
             tail = tail->next;
             len++;
         }
