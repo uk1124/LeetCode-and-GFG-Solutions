@@ -11,7 +11,7 @@ class Solution{
         }
     }
     
-    double mid_point(double l, double h, double magnets[], int n){
+    double mid_point(double l, double h, double magnets[], int n) {
         while(l <= h) {
             double m = (h+l) / 2;
             double t_force=0;
@@ -20,10 +20,10 @@ class Solution{
                 t_force += 1/(m-magnets[i]);
             }
             
-            if(abs(t_force) < 0.000001){
+            if(abs(t_force) < 0.000001) {
                 return m;   
             }
-            else if(t_force < 0){
+            else if(t_force < 0) {
                 h = m;
             }
             else{
