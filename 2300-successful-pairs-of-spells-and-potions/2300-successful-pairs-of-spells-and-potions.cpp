@@ -1,6 +1,9 @@
 class Solution {
 public:
     //APPROACH: USing Binary Search
+    /*Binary search the index of first potion >= need in the sorted potions. (need = success / spell)
+    The number of potions that are successful are potions.length - index
+    Accumulate the result ans and finally return it. */
     vector<int> successfulPairs(vector<int>& spells, vector<int>& potions, long long success) {
         vector<int> ans(spells.size());
         int n = potions.size();
@@ -22,30 +25,4 @@ public:
         }
         return ans;
     }
-    
-    
-//      vector<int> v(s.size(),0);
-//         sort(p.begin(),p.end());
-        
-//         for(int i=0;i<s.size();i++)
-//         {
-//             int h=p.size()-1;
-//             int l=0;
-//             int mid;
-//             while(l<=h)
-//             {
-//                 mid = l + (h-l)/2;
-                
-//                 if((long long int)s[i]*(long long int)p[mid] >= suc)
-//                     h = mid-1;
-                
-//                 else
-//                     l = mid+1;
-//             }
-            
-//             v[i] = p.size()-1-h;
-//         }
-        
-//         return v;
-//     }
 };
