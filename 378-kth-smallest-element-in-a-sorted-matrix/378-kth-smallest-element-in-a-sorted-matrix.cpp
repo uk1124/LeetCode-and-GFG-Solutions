@@ -14,13 +14,13 @@ public:
             pq.push({matrix[i][0], i, 0});
         }
         
-        for(int i = 1; i <= k; i++) {
+        while(k--) {
             auto top = pq.top(); 
             pq.pop();
             int r = top[1];
             int c = top[2];
             ans = top[0];
-            if (c+1 < n) {
+            if(c+1 < n) {
                 pq.push({matrix[r][c+1], r, c+1});
             }
         }
