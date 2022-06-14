@@ -1,6 +1,6 @@
 class Solution {
 public:
-    /*APPROCH: Using Min heap
+    /*APPROACH: Using Min heap.
     Since each of the rows in matrix are already sorted, we can understand the problem as finding the kth smallest
     element from amongst M sorted rows.
     We start the pointers to point to the beginning of each rows, then we iterate k times, for each time ith, the
@@ -26,5 +26,5 @@ public:
         }
         return ans;
     }
-    // TC: O(K * logK)  SC: O(K)
+    // TC: O(K*logK)  SC: O(K)
 };
