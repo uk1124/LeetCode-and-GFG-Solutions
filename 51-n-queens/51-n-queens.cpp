@@ -1,9 +1,10 @@
 class Solution {
 public:
+    //APPROACH: Using Backtracking.
     bool isSafe(int row, int col, vector<string> &board, int n) {
         int x = row;
         int y = col;
-        while(y >= 0) {
+        while(y >= 0) {                         //Check row
             if(board[x][y] == 'Q') {
                 return false;
             }
@@ -12,7 +13,7 @@ public:
         
         x = row;
         y = col;
-        while(x >=0 and y >= 0) {
+        while(x >=0 and y >= 0) {               //Check left diagonal
             if(board[x][y] == 'Q') {
                 return false;
             }
@@ -22,7 +23,7 @@ public:
         
         x = row;
         y = col;
-        while(x < n and y >= 0) {
+        while(x < n and y >= 0) {               //Check right diagonal
             if(board[x][y] == 'Q') {
                 return false;
             }
@@ -34,17 +35,17 @@ public:
     }
     
     void solve(int col, vector<vector<string>> &ans,  vector<string> &board, int n) {
-        if(col == n) {                      // Base Case
+        if(col == n) {                          // Base Case
             ans.push_back(board);
             return;
         }
         
         for(int row=0; row<n; row++) {
             if(isSafe(row, col, board, n)) {
-                board[row][col] = 'Q';
-                solve(col+1, ans, board, n);
+                board[row][col] = 'Q';          //Make decision
+                solve(col+1, ans, board, n);    //Next iteration
                 
-                board[row][col] = '.';      // Backtracking
+                board[row][col] = '.';          // Backtracking
             }
         }
     }
