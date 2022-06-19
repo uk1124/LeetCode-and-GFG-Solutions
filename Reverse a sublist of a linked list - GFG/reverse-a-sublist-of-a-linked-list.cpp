@@ -34,8 +34,8 @@ class Solution
     Node* reverseBetween(Node* head, int m, int n) {
         //Move till mth node
         Node *curr = head, *prev = NULL;
-        int count= 1;
-        while(count++ < m){
+        int count = 1;
+        while(count++ < m) {
             prev = curr;
             curr = curr->next;
         }
@@ -44,7 +44,7 @@ class Solution
         //Reverse Nodes till nth node
         Node *tempPrev = prev, *tempCurr = curr;
         Node *next;
-        while(count++ <= n and curr){
+        while(count++ <= n and curr) {
             next = curr->next;
             curr->next = prev;
             prev = curr;
@@ -53,11 +53,11 @@ class Solution
         
         //Changing the next pointers of mth and nth node
         tempCurr->next = curr;
-        if(tempPrev){
+        if(tempPrev) {
             tempPrev->next = prev;
             return head;
         }
-        else{
+        else {
             return prev;
         }
     }
