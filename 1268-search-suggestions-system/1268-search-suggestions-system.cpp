@@ -17,7 +17,6 @@ public:
             while(startIdx <= endIdx and (i >= products[endIdx].size() or products[endIdx][i] > searchWord[i])) {
                 endIdx--;
             }
-
             ans.push_back({});
             for(int j = startIdx; j < min(startIdx+3, endIdx+1); ++j) {
                 ans.back().push_back(products[j]);
