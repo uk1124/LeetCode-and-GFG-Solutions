@@ -28,7 +28,7 @@ public:
         }
         int k = 0;
         for(int j=i+1; j<n; j++) {
-            int a= s[j]-'0';
+            int a = s[j]-'0';
             k = k*10+a;
         }
         n -= 2;
