@@ -45,15 +45,15 @@ public:
 //     }
     
     //Bottom Up Approach
-     int superEggDrop(int k, int n) {
+    int superEggDrop(int k, int n) {
         vector<vector<int>> dp(k+1, vector<int>(n+1, -1));
-         for(int i=0; i<=k; i++) {
-             dp[i][0] = 0,dp[i][1] = 1;   
-         }
-         for(int i=0; i<=n; i++) {
-             dp[0][i] = 0,dp[1][i] = i;  
-         }
-         
+        for(int i=0; i<=k; i++) {
+            dp[i][0] = 0,dp[i][1] = 1;   
+        }
+        for(int i=0; i<=n; i++) {
+            dp[0][i] = 0,dp[1][i] = i;  
+        }
+        
         for(int i=2; i<k+1; i++) {
             for(int j=2; j<n+1; j++) {    
                 int lo = 1, hi = j, temp = 0, ans = INT_MAX;
