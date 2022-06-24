@@ -10,17 +10,23 @@
  */
 class Solution {
 public:
+    /*LOGIC:
+    Create the reversed output list by taking the sum of the respective digits of the l1, l2.
+    Reverse the output and update the stored pair sums to be digits.
+    */
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
         int size1 = 0, size2 = 0, carry = 0;
         ListNode *curr1 = l1, *curr2 = l2, *res = NULL;
+        
         while(curr1) {
             curr1 = curr1->next;
             size1++;
         }
-         while(curr2) {
+        while(curr2) {
             curr2 = curr2->next;
             size2++;
         }
+        
         curr1 = l1, curr2 = l2;
         while(size1 > 0 and size2 > 0) {
             int sum = 0;
