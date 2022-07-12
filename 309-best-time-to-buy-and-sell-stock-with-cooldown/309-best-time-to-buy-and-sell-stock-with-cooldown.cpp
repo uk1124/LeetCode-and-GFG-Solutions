@@ -1,23 +1,24 @@
 class Solution {
 public:
-   int getAns(vector<int> Arr, int ind, int buy, int n, vector<vector<int>> &dp ) {
-       if(ind >= n) {
+    //APPROACH: Using DP
+   int getAns(vector<int> Arr, int indx, int buy, int n, vector<vector<int>> &dp ) {
+       if(indx >= n) {
            return 0;   
        }
        
-       if(dp[ind][buy] != -1) {
-           return dp[ind][buy];
+       if(dp[indx][buy] != -1) {
+           return dp[indx][buy];
        }
        
        int profit;
        if(buy == 0) {              // We can buy the stock
-           profit = max(0 + getAns(Arr, ind+1, 0, n, dp), -Arr[ind] + getAns(Arr, ind+1, 1, n, dp));
+           profit = max(0 + getAns(Arr, indx+1, 0, n, dp), -Arr[indx] + getAns(Arr, indx+1, 1, n, dp));
        }
        
        if(buy == 1) {               // We can sell the stock
-           profit = max(0 + getAns(Arr, ind+1, 1, n, dp), Arr[ind] + getAns(Arr, ind+2, 0,n, dp));
+           profit = max(0 + getAns(Arr, indx+1, 1, n, dp), Arr[indx] + getAns(Arr, indx+2, 0,n, dp));
        }
-       return dp[ind][buy] = profit;
+       return dp[indx][buy] = profit;
    }
     
     int maxProfit(vector<int> prices) {
