@@ -1,5 +1,10 @@
 class Solution {
 public:
+    /*APPROACH: Using DFS.
+    Consider indexes of each stone as an ID number.
+    Visit each ID if it hasn't been visited. (Go from stone A to stone B if and only if A & B have common row or
+    column).
+    */
     int dfs(int index, vector<vector<int>>&stones, vector<bool>&visited, int n) {
         visited[index] = true;
         int result = 0;
