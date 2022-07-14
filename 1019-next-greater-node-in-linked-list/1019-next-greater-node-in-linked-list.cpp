@@ -10,7 +10,7 @@
  */
 class Solution {
 public:
-    //APPROACH: Push list values into a vector ans then same as 'Next greater element in an array'.
+    //APPROACH: Push list values into a vector and then same as 'Next greater element in an array'.
     vector<int> nextLargerNodes(ListNode* head) {
         vector <int> values;
         while(head) {
