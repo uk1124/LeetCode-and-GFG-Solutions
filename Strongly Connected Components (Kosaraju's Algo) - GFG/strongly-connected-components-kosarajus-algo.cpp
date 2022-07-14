@@ -15,10 +15,10 @@ class Solution {
     }
     
     void dfs(int source, vector<bool> &visited, vector<int> adj[], stack<int> &s) {
-        visited[source]=true;
-        for(auto neighbour:adj[source]) {
+        visited[source] = true;
+        for(auto neighbour: adj[source]) {
             if(!visited[neighbour]) {
-                dfs(neighbour,visited,adj,s);
+                dfs(neighbour, visited, adj, s);
             }
         }
         s.push(source);
@@ -29,10 +29,10 @@ class Solution {
      
     //Step 1: Topological sort
     stack<int> s;
-    vector<bool> visited(v,false);
-    for(int i=0;i<v;i++) {
+    vector<bool> visited(v, false);
+    for(int i=0; i<v; i++) {
         if(!visited[i]) {
-            dfs(i,visited,adj,s);
+            dfs(i, visited, adj, s);
         }
     }
     
@@ -40,18 +40,19 @@ class Solution {
     vector<int> trans[v];
     for(int i=0; i<v; i++) {
      visited[i] = false;
-     for(auto x: adj[i])
+     for(auto x: adj[i]) {
      trans[x].push_back(i);
+     
     }
     
    //Step 3: Do the dfs on the topological sort stack 
    int ans=0;
    while(!s.empty()) {
-       int temp=s.top();
+       int temp = s.top();
        s.pop();
        if(!visited[temp]) {
            ans++;
-           dfstopo(temp,visited,trans);
+           dfstopo(temp, visited, trans);
        }
    }
    return ans;
