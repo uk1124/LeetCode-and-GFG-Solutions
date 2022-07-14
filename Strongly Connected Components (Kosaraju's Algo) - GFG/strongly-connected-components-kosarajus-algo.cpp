@@ -41,8 +41,8 @@ class Solution {
     for(int i=0; i<v; i++) {
      visited[i] = false;
      for(auto x: adj[i]) {
-     trans[x].push_back(i);
-     
+         trans[x].push_back(i);
+     }
     }
     
    //Step 3: Do the dfs on the topological sort stack 
