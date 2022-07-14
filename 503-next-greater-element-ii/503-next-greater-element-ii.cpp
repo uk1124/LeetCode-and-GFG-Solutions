@@ -1,5 +1,8 @@
 class Solution {
 public:
+    /*APPROACH: 
+    Imagine the input array as a concatenation of the same array, twice.
+    Similar to Next Greater Element, store the index in the stack instead of the actual value. */
     vector<int> nextGreaterElements(vector<int>& nums) {
         int n = nums.size();
         stack<int> st;
