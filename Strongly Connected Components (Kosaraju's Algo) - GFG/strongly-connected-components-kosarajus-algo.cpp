@@ -27,7 +27,7 @@ class Solution {
     //Function to find number of strongly connected components in the graph
     int kosaraju(int v, vector<int> adj[]) {
      
-    //Step 1: tropological sort
+    //Step 1: Topological sort
     stack<int> s;
     vector<bool> visited(v,false);
     for(int i=0;i<v;i++) {
@@ -36,7 +36,7 @@ class Solution {
         }
     }
     
-    //Step 2: transponse 
+    //Step 2: Transpose 
     vector<int> trans[v];
     for(int i=0;i<v;i++) {
      visited[i]=false;
@@ -44,7 +44,7 @@ class Solution {
      trans[x].push_back(i);
     }
     
-   //Step 3: do the dfs on the topological sort stack 
+   //Step 3: Do the dfs on the topological sort stack 
    int ans=0;
    while(!s.empty()) {
        int temp=s.top();
