@@ -38,9 +38,9 @@ class Solution {
     
     //Step 2: Transpose 
     vector<int> trans[v];
-    for(int i=0;i<v;i++) {
-     visited[i]=false;
-     for(auto x:adj[i])
+    for(int i=0; i<v; i++) {
+     visited[i] = false;
+     for(auto x: adj[i])
      trans[x].push_back(i);
     }
     
