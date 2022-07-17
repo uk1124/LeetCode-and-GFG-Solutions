@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //APPROACH: Brute Force
     int maximumSum(vector<int>& nums) {
         int n = nums.size();
         sort(nums.begin(), nums.end());
@@ -9,7 +10,7 @@ public:
             int t = nums[i];
             int sum = 0;
             while(t) {
-                int rem = t%10;
+                int rem = t % 10;
                 sum += rem;
                 t /= 10;
             }
