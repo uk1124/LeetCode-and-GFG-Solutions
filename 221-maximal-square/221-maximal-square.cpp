@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //APPROACH: Using DP (Bottom Up).
     int maximalSquare(vector<vector<char>>& matrix) {
         int m = matrix.size();
         int n = matrix[0].size();
