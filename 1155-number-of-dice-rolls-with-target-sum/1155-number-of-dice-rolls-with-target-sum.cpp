@@ -1,5 +1,8 @@
 class Solution {
 public:
+    /*APPROACH: Using 2D DP.
+    We memoise the previously computed results for dice i and and target.
+    Since dp is initialized with zeros, we store there ans to check if the result has been pre-computed. */
     int m = 1000000007;
     int solve(int n, int k, int target, vector<vector<int>> &dp) {
         if(n == 0 or target < 0) {
