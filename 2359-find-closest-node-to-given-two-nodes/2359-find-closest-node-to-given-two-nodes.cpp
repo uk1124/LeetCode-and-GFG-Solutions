@@ -1,6 +1,9 @@
 class Solution {
 public:
-    void bfs(int node, vector<int> &dist, vector<int> &edges, int n) {
+    /*APPROACH: Using BFS.
+    -> Use BFS to compute distance from node1 to every node and from node2 to every node individually.
+    -> Loop from 0 to n nodes and return the first node with smallest value of max(v1[node], v2[node]) */
+    void bfs(int node, vector<int> &dist, vector<int> &edges) {
         queue<int> q;
         dist[node] = 0;
         q.push(node);
@@ -19,8 +22,8 @@ public:
         int n = edges.size();
         vector<int> v1(n, INT_MAX), v2(n, INT_MAX);
         
-        bfs(node1, v1, edges, n);
-        bfs(node2, v2, edges, n);
+        bfs(node1, v1, edges);
+        bfs(node2, v2, edges);
     
         int ans = INT_MAX, indx = -1;
         for(int i=0; i<n; i++) {
