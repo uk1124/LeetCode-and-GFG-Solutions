@@ -1,9 +1,10 @@
 class Solution {
 public:
+    //APPROACH: Using BFS.
     int orangesRotting(vector<vector<int>>& grid) {
         int m = grid.size();
         int n = grid[0].size();
-        int ans = -1;                        //Initially all rotten oranges started at 0.
+        int ans = -1;                        //Initially all rotten oranges started at 0
         vector<int> dir = {-1, 0 ,1, 0, -1};
 
         queue<pair<int,int>> q;
@@ -40,7 +41,7 @@ public:
         if(fresh > 0) {                      //If fresh>0 that means there are fresh oranges left
             return -1;
         }
-        if(ans == -1) {                      //We initialised with -1, so if there were no oranges it'd take 0 mins.
+        if(ans == -1) {                      //We initialised with -1, so if there were no oranges it'd take 0 mins
             return 0; 
         }
         
