@@ -1,5 +1,7 @@
 class Solution {
 public:
+    /*APPROACH: Similar as Subsets.
+    Just use a set to store non-suplicate values.*/
     vector<vector<int>> subsetsWithDup(vector<int>& nums) {
         int n=nums.size();
         vector<vector<int>> ans;
@@ -7,7 +9,6 @@ public:
         
         for(int i=0; i<(1<<n); i++) {
             vector<int> temp;
-            
             for(int j=0; j<n; j++) {
                 if(i & (1<<j))
                     temp.push_back(nums[j]);
