@@ -1,5 +1,7 @@
 class Solution {
 public:
+    //APPROACH: Using DP. (Bottom Up)
+    //The problem is same as longest common substring.
     int findLength(vector<int>& nums1, vector<int>& nums2) {
         int n = nums1.size();
         int m = nums2.size();
