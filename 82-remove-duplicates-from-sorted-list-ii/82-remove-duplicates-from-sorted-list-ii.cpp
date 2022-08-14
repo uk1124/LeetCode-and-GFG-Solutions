@@ -21,7 +21,7 @@ public:
         while(curr->next and curr->next->next) {
             if(curr->next->val == curr->next->next->val) {
                 duplicate = curr->next->val;
-                while(curr->next && curr->next->val == duplicate) {
+                while(curr->next and curr->next->val == duplicate) {
                     curr->next = curr->next->next;
                 }
             }
