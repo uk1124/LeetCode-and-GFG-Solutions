@@ -1,6 +1,6 @@
 class Solution {
 public:
-    
+    //APPROACH: Using DP (Top Down)
      int solve(int i, int j, vector<vector<int>> &obstacleGrid, vector<vector<int>> &dp) {
          int m = obstacleGrid.size();
          int n = obstacleGrid[0].size();
@@ -8,10 +8,10 @@ public:
          if(i < 0 or j < 0 or i >= m or j >= n) {
              return 0;
          }
-         if(obstacleGrid[i][j] == 1) {
+         if(obstacleGrid[i][j] == 1) {      // We reach an obstacle cell so can't move any further. So stop exploring                                                further paths from this cell
              return dp[i][j] = 0;
          }
-         if(i == m-1 and j == n-1) {                 // We got a possible path
+         if(i == m-1 and j == n-1) {        // We got a possible path
              return 1;
          }
          if(dp[i][j] != -1) {
