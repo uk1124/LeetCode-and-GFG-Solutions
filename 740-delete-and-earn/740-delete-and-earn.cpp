@@ -1,7 +1,9 @@
 class Solution {
 public:
+    /*APPROACH: Using DP (Top Down)
+    Make a frequency vector in which store frequency of all the elements then approach same as House Robber. */
     int solveMem(int currIndx, vector<int> &freq, unordered_map<int, int> &dp) {
-        if(currIndx >= freq.size()) {
+        if(currIndx < 0) {
             return 0;
         }
         
@@ -10,8 +12,8 @@ public:
             return dp[key];
         }
         
-        int Delete = currIndx * freq[currIndx] + solveMem(currIndx+2, freq, dp);
-        int notDelete = solveMem(currIndx+1, freq, dp);
+        int Delete = currIndx * freq[currIndx] + solveMem(currIndx-2, freq, dp);
+        int notDelete = solveMem(currIndx-1, freq, dp);
         
         return dp[key] = max(Delete, notDelete);
     }
@@ -24,6 +26,6 @@ public:
         for(int el: nums) {
             freq[el]++;
         }
-        return solveMem(0, freq, dp);
+        return solveMem(freq.size()-1, freq, dp);
     }
 };
