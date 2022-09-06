@@ -1,5 +1,7 @@
 class Solution {
 public:
+    /*APPROACH: Using DP
+    For each string in the set, we have the choice to include it in the subset or leave it. (Knapsack) */
     int dp[605][105][105];
     int solve(int indx, int m, int n, vector<string> &strs) {
         if(indx == strs.size()) {
