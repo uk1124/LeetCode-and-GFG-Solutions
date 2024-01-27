@@ -1,6 +1,39 @@
 class Solution {
 public:
-    int MOD = 1e9+7;
+//APPROACH: Using DP (MEMOIZATION METHOD)
+    int MOD = 1e9 + 7;
+
+    int dp_(int n, int k, vector<vector<int>>& dp) {
+        // Base cases
+        if (k < 0) {
+            return 0;
+        } 
+        else if (k == 0) {
+            return 1;
+        }
+
+        if (dp[n][k] != -1) {
+            return dp[n][k];
+        }
+
+        int count = 0;
+        // Iterate over possible values of p to calculate the count
+        for (int p = 0; p <= min(k, n - 1); p++) {
+            // Recursively calculate the count for reduced parameters and sum them up
+            count = (count + dp_(n - 1, k - p, dp)) % MOD;
+        }
+
+        // Store the calculated count in the memoization table
+        dp[n][k] = count;
+        return count;
+    }
+
+    int kInversePairs(int n, int k) {
+        vector<vector<int>> dp(n + 1, vector<int>(k + 1, -1));
+        return dp_(n, k, dp);
+    }
+
+/*(TABULATION METHOD)
 
     int kInversePairs(int n, int k) {
         // Base case: if k is negative, there are no arrays
@@ -31,4 +64,5 @@ public:
         }
         return dp[n][k];
     }
+*/
 };
