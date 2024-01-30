@@ -2,24 +2,27 @@ class Solution {
 public:
     int evalRPN(vector<string>& tokens) {
         stack<int> st;
-        unordered_set<string> s = {"+", "-", "*", "/"};
+        unordered_set<string> operators = {"+", "-", "*", "/"};
 
-        for(int i=0; i<tokens.size(); i++) {
-            if(s.find(tokens[i]) == s.end()) {
-                st.push(stoi(tokens[i]));
-            }
+        for (const string& token : tokens) {
+            if (operators.find(token) == operators.end()) {
+                // If the token is not an operator, push its integer value to the stack
+                st.push(stoi(token));
+            } 
             else {
-                int a = st.top();
+         // If the token is an operator, pop two operands, perform the operation & push the result back
+                int operand2 = st.top();
                 st.pop();
-                int b = st.top();
+                int operand1 = st.top();
                 st.pop();
-                if(tokens[i] == "+") st.push(b+a);
-                else if(tokens[i] == "-") st.push(b-a);
-                else if(tokens[i] == "*") st.push(b*a);
-                else st.push(b/a);
+
+                if (token == "+") st.push(operand1 + operand2);
+                else if (token == "-") st.push(operand1 - operand2);
+                else if (token == "*") st.push(operand1 * operand2);
+                else st.push(operand1 / operand2);
             }
         }
-
+        // The final result is on the top of the stack
         return st.top();
     }
 };
