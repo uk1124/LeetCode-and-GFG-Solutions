@@ -1,5 +1,11 @@
 class Solution {
 public:
+/*GREEDY APPROACH:
+- Sort the input array and then checks each window of size 3, ensuring that the difference between the 
+first and last element in each window is less than or equal to the given threshold (k). 
+- If the condition is met, the current window is added to the result vector; otherwise, an empty vector 
+is returned.
+*/
     vector<vector<int>> divideArray(vector<int>& nums, int k) {
         // Sort the input array
         sort(nums.begin(), nums.end());
