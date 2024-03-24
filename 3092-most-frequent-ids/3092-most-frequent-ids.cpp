@@ -1,5 +1,6 @@
 class Solution {
 public:
+//APPROACH: Maintain a count of IDs and their frequencies, update a priority queue with the max count of IDs, and returns the max count after each step
     vector<long long> mostFrequentIDs(vector<int>& nums, vector<int>& freq) {
         int n = nums.size();
         unordered_map<int, long long> mp;        // Initialize a map to store the count of IDs
@@ -18,13 +19,13 @@ public:
                     if (mp[p.second]) {        // If the count is still non-zero
                         pq.push({mp[p.second], p.second}); // Push the updated count and ID pair back into the priority queue
                     }
-                } else { // If the count in the map matches the count in the priority queue
+                } 
+                else { // If the count in the map matches the count in the priority queue
                     break; 
                 }
             }
             ans.push_back(pq.top().first); // Push the maximum count from the priority queue into the result vector
         }
-
         return ans;
     }
 };
