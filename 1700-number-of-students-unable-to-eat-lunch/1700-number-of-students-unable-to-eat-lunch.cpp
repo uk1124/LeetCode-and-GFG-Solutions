@@ -1,5 +1,12 @@
 class Solution {
 public:
+    /*APPROACH: Using Queue.
+    Initialize a rotations variable with 0 and a counter variable (i) with 0.
+    Traverse the queue until it is empty and rotations is less than size of queue.
+    If front value of queue == sandwiches at i index
+    Pop it from queue, increase the counter variable i and set rotations = 0.
+    Else take it from queue, push it back and pop it from front. Increase the number of rotations.
+    Return size of queue. */
     int countStudents(vector<int>& students, vector<int>& sandwiches) {
         int size = students.size();
         queue<int> student_choice;
