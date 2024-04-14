@@ -19,9 +19,7 @@ public:
         if(root->left != NULL and root->left->left == NULL and root->left->right == NULL) {
             sum += root->left->val;
         }
-        else {
-            sum += sumOfLeftLeaves(root->left);
-        }
+        sum += sumOfLeftLeaves(root->left);
         sum += sumOfLeftLeaves(root->right);
         return sum;
     }
