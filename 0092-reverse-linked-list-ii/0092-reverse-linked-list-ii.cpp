@@ -14,10 +14,12 @@ public:
         if(head == NULL and head->next == NULL) {
             return head;
         }
-        ListNode *dummy = new ListNode(0);
-        ListNode *prev = dummy, *curr;
-        dummy->next = head;
-        int i = 1;
+        //ListNode *dummy = new ListNode(0);
+        //ListNode *prev = dummy;
+        ListNode *prev = head;
+        ListNode *curr;
+        //dummy->next = head;
+        int i = 2;
         while(i++ < left) {
            prev = prev->next;
         }                               // prev is at the node just before the 'left' one
@@ -28,6 +30,7 @@ public:
             curr->next = curr->next->next;
             prev->next->next = temp;
         }
-        return dummy->next;
+       // return dummy->next;
+       return head;
     }
 };
