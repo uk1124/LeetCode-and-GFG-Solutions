@@ -11,22 +11,29 @@
  */
 class Solution {
 public:
-    //APPROACH: Using DFS
+// Approach: Using DFS
     TreeNode* addOneRow(TreeNode* root, int val, int depth) {
+        // If the root is null, return null
         if(!root) {
             return root;
         }
-        if(depth == 1) {           //Edge case: d == 1
-            return new TreeNode(val, root, NULL);
+        
+        // Edge case: if depth is 1, create a new root node with the given value
+        if(depth == 1) {
+            return new TreeNode(val, root, nullptr);
         }
-        if(depth == 2) {           //Right depth reached!
-            root->left = new TreeNode(val, root->left, NULL);
-            root->right = new TreeNode(val, NULL, root->right);
+        
+        // If depth is 2, add new nodes as the left and right children of the current root
+        if(depth == 2) {
+            root->left = new TreeNode(val, root->left, nullptr);
+            root->right = new TreeNode(val, nullptr, root->right);
             return root;
         }
         
+        // Recursively traverse the left and right subtrees with depth decremented by 1
         addOneRow(root->left, val, depth - 1);
         addOneRow(root->right, val, depth - 1);
+        
         return root;
     }
 };
