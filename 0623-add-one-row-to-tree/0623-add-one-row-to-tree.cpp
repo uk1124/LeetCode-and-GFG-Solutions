@@ -11,7 +11,7 @@
  */
 class Solution {
 public:
-// Approach: Using DFS
+//APPROACH: Using DFS
     TreeNode* addOneRow(TreeNode* root, int val, int depth) {
         // If the root is null, return null
         if(!root) {
