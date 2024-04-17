@@ -11,13 +11,13 @@
  */
 class Solution {
 public:
+    // Recursive function to traverse the tree and build the smallest string
     string dfs(TreeNode* root, string path) {
         // Append the current node's character to the path
         path = char('a' + root->val) + path;
         
-        // Check if the current node is a leaf node (i.e., it has no children)
-        if (!root->left and !root->right) {
-            // If it's a leaf node, return the path (this is a candidate string)
+        // Check if the current node is a leaf node (If it is, return the path)
+        if(!root->left and !root->right) {
             return path;
         }
         
@@ -28,23 +28,24 @@ public:
         string rightPath = (root->right) ? dfs(root->right, path) : "";
         
         // Return the lexicographically smaller path among the paths from left and right subtrees
-        if (leftPath.empty()) {
+        if(leftPath.empty()) {
             return rightPath;
         } 
-        else if (rightPath.empty()) {
+        else if(rightPath.empty()) {
             return leftPath;
         } 
         else {
+            // If both paths are not empty, return the smaller one
             return min(leftPath, rightPath);
         }
     }
 
     string smallestFromLeaf(TreeNode* root) {
         // Edge case: if root is null, return an empty string
-        if (!root) {
+        if(!root) {
             return "";
         }
-        // Recursively traverse the tree and build the lexicographically smallest string
+        // Start recursive traversal from root with an empty path
         return dfs(root, "");
     }
 };
