@@ -1,16 +1,21 @@
 class Solution {
 public:
+//APPROACH: Using Binary Search
     int findMaxK(vector<int>& nums) {
-        int maxi = -1;
-        for(int i=0; i<nums.size(); i++) {
-            if(nums[i] > 0) {
-                for(int j=0; j<nums.size(); j++) {
-                    if(nums[i] == -1*nums[j]) {
-                        maxi = max(maxi, nums[i]);
-                    }
-                }
+        sort(nums.begin(), nums.end());
+        int lo = 0, hi = nums.size()-1;
+        
+        while(lo < hi) {
+            if(nums[lo] + nums[hi] == 0) {
+                return  nums[hi];
+            }
+            else if(nums[lo] + nums[hi] < 0) {
+                lo++;
+            }
+            else {
+                hi--;
             }
         }
-        return maxi;
+        return -1;
     }
 };
