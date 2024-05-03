@@ -1,5 +1,7 @@
 class Solution {
 public:
+/*APPROACH: Points with same slope will fall on same line.
+TC: O(N^2) */
     int maxPoints(vector<vector<int>>& points) {
         int n = points.size();
         if (n <= 2) return n;     // If there are 2 or fewer points, they all lie on the same line
@@ -27,8 +29,8 @@ public:
             }
             
             // Find the maximum number of points that lie on the same line
-            for (auto &[slope, count] : slopeCount) {
-                maxPointsOnLine = max(maxPointsOnLine, count + 1); // Add 1 to count for the current point
+            for (auto it : slopeCount) {
+                maxPointsOnLine = max(maxPointsOnLine, it.second + 1); // Add 1 to count for the current point
             }
         }
         
