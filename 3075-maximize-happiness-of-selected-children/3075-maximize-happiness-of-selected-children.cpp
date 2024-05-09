@@ -4,18 +4,16 @@ public:
         sort(happiness.begin(), happiness.end());
 
         long long ans = 0;
-        
+        int sub = 0;
         while(k--) {
             int n = happiness.size();
-            ans += (happiness[n-1] - 1);
+            if(happiness[n-1] > sub) {
+                ans += (happiness[n-1] - sub);
+            }
             happiness.pop_back();
+            sub++;
 
-            // for(int i = 0; i < n; i++) {
-            //     if(happiness[i] != 0) {
-            //         happiness[i] -= 1;
-            //     }
-            // }
         }
-        return ans+1;
+        return ans;
     }
 };
