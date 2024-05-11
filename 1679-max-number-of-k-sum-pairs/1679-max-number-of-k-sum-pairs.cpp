@@ -1,9 +1,11 @@
 class Solution {
 public:
-/*APPROACH: Utilize a hash map to count the frequency of each number in the array. Then, iterate 
+/* (IT'S A VARIANT OF TWO SUM)
+APPROACH: Utilize a hash map to count the frequency of each number in the array. Then, iterate 
 through the array to find pairs that sum up to the target value k. Then calculate the number of such 
 pairs using the complement technique and return the total count of operations performed.
-*/
+TC: O(N)
+*/ 
     int maxOperations(vector<int>& nums, int k) {
         unordered_map<int, int> freq; // Store the frequency of each number
         int operations = 0;           // Initialize the count of operations
