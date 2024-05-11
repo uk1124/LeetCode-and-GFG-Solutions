@@ -20,8 +20,8 @@ TC: O(N)
             int num = pair.first;    // Current number
             int count = pair.second; // Frequency of the current number
             
-            // If the number is less than or equal to k/2 and there's a complement in the map
-            if(num <= k / 2 and freq.count(k - num) > 0) {
+            // If the number is less than or equal to k and there's a complement in the map
+            if(num <= k and freq.count(k - num) > 0) {
                 // If the complement is the same as the current number
                 if (num == k - num) {
                     // Calculate the number of pairs that can be formed
