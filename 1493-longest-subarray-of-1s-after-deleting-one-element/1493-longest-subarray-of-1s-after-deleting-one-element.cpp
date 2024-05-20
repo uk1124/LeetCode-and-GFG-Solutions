@@ -8,6 +8,7 @@ public:
         int i = 0; 
         int n = nums.size(); 
 
+        //To handle to case where whole array is of 1's only
         int count1s = count(nums.begin(), nums.end(), 1);
         if(count1s == n) {
             return n-1;
