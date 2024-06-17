@@ -2,7 +2,7 @@ class Solution {
 public:
     bool judgeSquareSum(int c) {
         long long t = c;
-        for(long long i=1; i<=sqrt(c); i++) {
+        for(long long i=0; i<=sqrt(c); i++) {
             t = c;
             t -= i*i;
             double temp = sqrt(t);
