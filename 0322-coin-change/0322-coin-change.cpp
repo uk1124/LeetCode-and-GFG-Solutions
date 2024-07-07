@@ -1,33 +1,30 @@
 class Solution {
-    //APPROACH: 2D DP, Memoization.
-    public:
-    int dp[10000 + 1][12 + 1];
-    
-    int memoization(vector<int>& wt, int w, int n) {
-        if(n == 0 or w == 0) {
-            return (w == 0) ? 0 : INT_MAX - 1;
+public:
+    int solve(vector<int> &coins, int amount, vector<int> &dp) {
+        if (amount < 0) return -1; // Base case: invalid amount
+        if (amount == 0) return 0; // Base case: no coins needed for amount 0
+        
+        if (dp[amount] != -2) {   // Return already computed result
+            return dp[amount]; 
         }
         
-        if(dp[w][n] != -1) {
-            return dp[w][n]; 
+        int minCoins = INT_MAX;
+        for (int coin : coins) {
+            int ans = solve(coins, amount - coin, dp);
+            if (ans >= 0 and ans < minCoins) {
+                minCoins = 1 + ans; // Update minimum coins needed
+            }
         }
-			
-        if(wt[n-1] > w) {
-            return dp[w][n] = 0 + memoization(wt, w-0, n-1);
-        }
-        else {
-            return dp[w][n] = min(0 + memoization(wt, w-0, n-1), 1 + memoization(wt, w-wt[n - 1], n));
-        }
+        
+        dp[amount] = (minCoins == INT_MAX) ? -1 : minCoins; // Store the result in memo
+        return dp[amount];
     }
-    
-    int coinChange(vector<int>& coins, int amount)  {
-        memset(dp, -1, sizeof(dp)); 
-        int minCoins = memoization(coins, amount, coins.size());
-        if(minCoins == INT_MAX - 1) {
-            return -1;
-        }  
-        else {
-            return minCoins;  
+
+    int coinChange(vector<int>& coins, int amount) {
+        if (amount == 0) {
+            return 0;
         }
+        vector<int> dp(amount + 1, -2); // Initialize memo array with a default value
+        return solve(coins, amount, dp);
     }
 };
