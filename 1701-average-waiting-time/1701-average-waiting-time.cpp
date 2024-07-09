@@ -6,7 +6,7 @@ public:
 2-> 5, 4,5,6,7,8
 3-> 4, 9,10,11
 */
-    int ans = 0;
+    long long ans = 0;
     int current_time = 0;
 
     for(auto v: customers) {
